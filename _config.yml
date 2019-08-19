@@ -1,6 +1,6 @@
 # Site settings
 title: foxpsd Blog
-SEOTitle: 黄玄的博客 | Hux Blog
+SEOTitle: foxpsd的博客 | foxpsd Blog
 header-img: img/home-bg.jpg
 email: xusy@dxy.cn
 description: ""
@@ -38,8 +38,8 @@ anchorjs: true                          # if you want to customize anchor. check
 # from PR#40, to support local preview for Jekyll 3.0
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
-# plugins: [jekyll-paginate]
-
+plugins: [jekyll-paginate]
+paginate: 5
 
 
 # Markdown settings
@@ -59,7 +59,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: hux
+disqus_username: foxpsd
 
 # Netease settings
 netease_comment: false
@@ -102,8 +102,23 @@ page-mathjax: false
 
 # Friends
 friends: [
-    {
-        title: "丁香人才",
-        href: "https://www.jobmd.cn"
-    }
+  {
+    title: "丁香人才",
+    href: "https://www.jobmd.cn"
+  }
 ]
+
+collections:
+  my_collection:
+    output: true
+    permalink: /ttt/:path
+
+defaults:
+  -
+    scope:
+      path: "assets/images"
+    values:
+      image: true
+
+gallery:
+  list: ['dota', 'aaa']

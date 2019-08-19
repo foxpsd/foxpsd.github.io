@@ -1,0 +1,26 @@
+---
+
+---
+<div>
+  yy
+  {{ site.title }}
+  {% for gallery in site.gallery.list %}
+    
+    {% for image in site.static_files %}
+      {% assign gallery_path = 'assets/images/' | append: gallery %}
+      <div class="gallery">
+        {{ gallery }}
+        {% if image.path contains gallery_path %}
+          <img src="{{ image.path }}" alt="">
+        {% endif %}
+      </div>
+      {{ gallery_path }}
+      
+    {% endfor %}
+  {% endfor %}
+  <!-- {% for image in site.static_files %}
+    {% if image.path contains 'assets/images/' %}
+      <img src="{{ image.path }}" alt="">
+    {% endif %}
+  {% endfor %} -->
+</div>
