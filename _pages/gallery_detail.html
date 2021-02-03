@@ -1,0 +1,14 @@
+---
+layout: page
+---
+<div>
+  {% for gallery in site.gallery %}
+    {% assign gallery_path = 'assets/images/' | append: gallery.name %}
+    {% capture cover_img %}/{{ gallery_path }}/{{ gallery.cover }}{% endcapture %}
+    <div class="gallery">
+      <h3 class="gallery-name">{{ gallery.name }}</h3>
+      <img src="{{ cover_img }}" alt="">
+      <p>{{ gallery.description }}</p>
+    </div>
+  {% endfor %}
+</div>
